@@ -25,13 +25,8 @@ def select_language():
 
 
 def main():
-<<<<<<< HEAD
-    pws_db_file = ".passwords.txt"
-    ultimate_pw_file = ".ult_passw.txt"
-=======
     pws_db_file = ".files/.passwords.txt"
     ultimate_pw_file = ".files/.ult_passw.txt"
->>>>>>> dace2b1 (intial commit)
 
     lang_dict = select_language()
 
@@ -40,7 +35,7 @@ def main():
     print(lang_dict["welc"])
 
     # Authenticate user
-    if osp.exists(pws_db_file):
+    if osp.exists(ultimate_pw_file):
         user_pw, salt = master_pw_handler.check_password()
         if user_pw is not None:
             print(lang_dict["login_ok"])
@@ -55,8 +50,6 @@ def main():
     # main program loop
 
     OwnPrompt(user_pw, salt, pws_db_file, lang_dict).cmdloop()
-
-    print("Program ukoncen\nUzivatel odhlasen")
 
 
 if __name__ == "__main__":
